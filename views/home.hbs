@@ -1,0 +1,36 @@
+{{> header}}
+
+<div class="container">
+    <div id="homepg">
+    <h1 class = "h1_home">Trippy Cat Clicker </h1>
+     <div id ="home">
+     <button class='bstyle'><a href='/login' > Sign In to Play </a></button>
+     <br><br>
+     <h1> Or Register Below </h1>
+     <br>
+     <button class="bstyle"><a href='/signup' > Register </a> </button>
+    <p/>
+    <img id = "cat" src="https://i.imgur.com/z8uo29S.gif"/>
+    </div>
+    </div>
+    {{!-- <style>
+        #score {
+      margin-top: -100px;
+      margin-left: 220px;
+    }
+    </style>
+    <img id="catClick" style="width: 200px; height:200px" src="https://media.giphy.com/media/MFebrCT36wDf2/giphy.gif" alt="Cat">
+    <p id="score">Score: 0</p>
+    <script>
+        let score = 0;
+        score = localStorage.getItem('score');
+        let p = document.getElementById('score');
+        p.innerText = "Score: " + score;
+        document.addEventListener('click', function(e){
+            if(e.target.id === 'catClick'){
+                p.innerText = 'Score: ' + score++
+            }
+            localStorage.setItem('score', score);
+        })
+    </script> --}}
+</div>

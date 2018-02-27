@@ -1,0 +1,40 @@
+{{> header}}
+
+<div onload="john()">
+    <h1 class="h1_home">Click to Make Me Meow! </h1>
+    <div id="home">
+        <p/>
+        <img id="cat_click" value="PLAY" src="https://slack-imgs.com/?c=1&url=https%3A%2F%2Fmedia0.giphy.com%2Fmedia%2FMFebrCT36wDf2%2Fgiphy.gif"
+        />
+        <audio id="audio" src="http://www.wavlist.com/soundfx/002/cat-meow4.wav"></audio>
+        <p name="john" id="score" class="h2_home">You made the kitty meow 0 times!</p>
+        <a href='/profile'>
+        <button style="height: 50px; width: 188px; font-size: 12px" class='bstyle'> Go to Profile </button>
+        </a>
+        <button style="height: 50px; width: 188px; font-size: 12px; color: " id="reset" class="bstyle">Reset Score</button>
+    </div>
+    <script>
+        let audio = document.getElementById('audio');
+        let clicks = document.getElementById('score');
+        let score = 0;
+        let total = 0;
+        score = localStorage.getItem('score');
+        clicks.innerText = `You made the kitty meow ${score} times!`;
+        document.addEventListener('click', function(e){
+            let id = e.target.id;
+            console.log(score)
+            if(id === 'cat_click'){
+                total++;
+                score ++;
+                localStorage.setItem('score', score);
+                localStorage.setItem('total', total);
+                audio.play();
+                clicks.innerText = `You made the kitty meow ${score} times!`;
+            }else if(id === 'reset'){
+                score = 0;
+                localStorage.setItem('score', score);
+                clicks.innerText = `You made the kitty meow ${score} times!`;
+            }
+        });
+    </script>
+</div>
